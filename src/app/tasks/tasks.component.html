@@ -1,0 +1,78 @@
+<div class="bg">
+    
+<br>
+<br>
+<div class="container">
+<div class="body ">
+<div class="table-responsive  ">
+    <div class="table-wrapper min-vh-100">
+        <div class="table-title">
+            <div class="row">
+                <div class="col-sm-5">
+                    <h2>All  <b>Tasks</b></h2>
+                </div>
+                
+                <div class="col-sm-7 d-flex justify-content-end">
+                    
+                    
+                    
+                        <a class="refresh-btn" (click)="loadWorks()">refresh<span class="material-icons" style="font-size: 39px; transform: rotate(0deg); -webkit-text-stroke-width: 0.7px;">refresh</span> </a>
+                           
+                                            
+                                       
+                </div>
+                
+            </div>
+        </div>
+        <!--   search by date -->
+        <div class="input-group search b">
+            <form (ngSubmit)="onSearch()" class="row g-2">
+              <div class="col-md-9">
+                <input type="date" class="form-control rounded" [(ngModel)]="searchDate" name="searchDate" />
+              </div>
+              <div class="col-md-3">
+                <button type="submit" class="btn btn-primary" [hidden]="!searchDate">Search</button>
+              </div>
+            </form>
+            
+
+          </div>
+          
+        <table class="table table-striped table-hover">
+            <thead>
+                
+                <tr>
+                    <th>index</th>
+                    <th style="width: 20%;" >task Title</th>
+                    <th style="width: 25%;">start time</th>
+                    <th style="width: 15%;">duration</th>
+                    <th style="width: 40%;">discription</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let work of visibleWorks ;let i = index" >
+                    <td>{{ i + 1 }}</td>
+                    
+                    <td>{{work.title}}</td>
+                    <td >{{work.startTime | date: 'short' }}</td>
+                    <td > {{work.duration}} h</td>
+
+                    <td >
+                        {{work.description}}
+                    </td>
+                </tr>
+               
+            </tbody>
+        </table>
+        <button class="btn btn-link" (click)="toggleShowMore()">
+            {{ showMore ? 'Show Mine' : 'Show All ' }}          </button>
+       
+      
+       
+    </div>
+ 
+</div>
+</div>
+</div>
+</div>

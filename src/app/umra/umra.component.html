@@ -1,0 +1,14 @@
+<div class="umra-container">
+    <h1>Add Umra</h1>
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="umraName">Umra Name:</label>
+        <input type="text" id="umraName" name="umraName" [(ngModel)]="umra.umraName" class="form-control" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Add Umra</button>
+    </form>
+    <div *ngIf="umraAdded" class="success-message">
+      Umra added successfully!
+    </div>
+  </div>
+  

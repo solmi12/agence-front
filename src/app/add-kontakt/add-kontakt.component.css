@@ -1,0 +1,59 @@
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    color: #fff;
+  }
+  .page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .image {
+    width: 100%; /* To make the image take the full width of the page */
+    height: auto;
+    max-height: 100vh;
+    margin-top: 20px; /* Add spacing between the navbar and image */
+  }
+  
+  .content {
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+ 
+  }
+  .title {
+ color:crimson;
+    margin-bottom: 20px;
+  }
+  
+  .columns {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  .column {
+    flex-basis: 48%; /* Adjust the width as needed */
+  }
+  
+  .subtitle {
+    color: red;
+  }
+  

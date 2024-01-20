@@ -1,0 +1,30 @@
+<app-admin-navbar-component></app-admin-navbar-component>
+
+<div class="faq-container">
+  <img src="../../assets/ban-makka-travel-frankfurt2.jpg" class="image">
+  
+  <div class="categories-list">
+    <div class="category" (click)="filterByCategory('all')">All</div>
+    <div *ngFor="let category of categories" class="category" (click)="filterByCategory(category)">
+      {{ category }}
+    </div>
+  </div>
+
+  <div class="faq-list">
+    <div *ngFor="let faq of filteredFaqs" class="faq-item">
+      <div *ngFor="let faq of filteredFaqs" class="faq-item">
+        <div class="faq-title" (click)="toggleDescription(faq)">
+          {{ faq.titleFaq }}
+          <i class="fa fa-plus-circle fa-icon" [ngClass]="{'fa-minus-circle': faq.showDescription}"></i>
+        </div>
+        <div *ngIf="faq.showDescription" class="faq-description">
+          {{ faq.descriptionFaq }}
+        </div>
+      </div>
+      
+    
+    <div *ngIf="filteredFaqs.length === 0" class="no-faqs-message">
+      No FAQs available.
+    </div>
+  </div>
+</div>

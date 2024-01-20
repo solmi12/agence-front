@@ -1,0 +1,133 @@
+<br>
+
+
+
+<div class="container container-bordered">
+  
+    
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col">
+              <div class="card card-registration my-4">
+                <div class="row g-0">
+                  <div class="col-xl-6 d-none d-xl-block">
+                    <img src="../../assets/bg.png"
+                      alt="Sample photo" class="img-fluid"
+                      style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />
+                  </div>
+                  <div class="col-xl-6 ">
+                    <div class="card-body p-md-5 text-black ">
+                      <h3  class="mb-5 text-uppercase ">Employee registration </h3>
+      
+                  <form #form="ngForm" (ngSubmit)="register(form)" >
+                    <div class="row">
+                      <div class="col-md-6 mb-4">
+                        <div class="form-outline">
+                          <input type="text" name="firstname" [(ngModel)]="employee.firstname"  id="form3Example1m" class="form-control form-control-lg" required />
+                          <label class="form-label"  for="form3Example1m">First name</label>
+                          <div *ngIf="form.controls['firstname']?.invalid && (form.controls['firstname']?.dirty || form.controls['firstname']?.touched)">
+                            <div style="color: red;" *ngIf="form.controls['firstname']?.errors?.['required']">First name is required.</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6 mb-4">
+                        <div class="form-outline">
+                          <input type="text" id="form3Example1n" name="lastName" [(ngModel)]="employee.lastName" class="form-control form-control-lg" required />
+                          <label class="form-label"  for="form3Example1n">Last name</label>
+                          <div *ngIf="form.controls['lastName']?.invalid && (form.controls['lastName']?.dirty || form.controls['lastName']?.touched)">
+                            <div style="color: red;" *ngIf="form.controls['lastName']?.errors?.['required']">Last name is required.</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+    
+                    <div class="row">
+                      <div class="col-md-6 mb-4">
+                        <div class="form-outline">
+                          <input type="email" name="email" id="form3Example1m1" [(ngModel)]="employee.email" class="form-control form-control-lg" required />
+                          <label class="form-label" for="form3Example1m1">Email</label>
+                          <div *ngIf="form.controls['email']?.invalid && (form.controls['email']?.dirty || form.controls['email']?.touched)">
+                            <div style="color: red;" *ngIf="form.controls['email']?.errors?.['required']">email is required.</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6 mb-4">
+                        <div class="form-outline">
+                          <input type="password" id="form3Example1n1" name="password" [(ngModel)]="employee.password"  class="form-control form-control-lg" required />
+                          <label class="form-label" for="form3Example1n1">password</label>
+                          <div *ngIf="form.controls['password']?.invalid && (form.controls['password']?.dirty || form.controls['password']?.touched)">
+                            <div style="color: red;" *ngIf="form.controls['password']?.errors?.['required']">password is required.</div>
+                          </div>
+                          
+                        </div>
+                      </div>
+                    </div>
+    
+                    <div class="form-outline mb-4">
+                      <input type="date" name="birthDay"    [(ngModel)]="employee.birthDay"   class="form-control form-control-lg"  required/>
+                      <label class="form-label"  >birthDay</label>
+                      <div *ngIf="form.controls['birthDay']?.invalid && (form.controls['birthDay']?.dirty || form.controls['birthDay']?.touched)">
+                        <div style="color: red;" *ngIf="form.controls['birthDay']?.errors?.['required']">birthDay is required.</div>
+                      </div>
+                    </div>
+                    <div class="form-outline mb-4">
+                        <img [src]="employee.imageData" class="avatar" alt="Avatar" width="100 px " height="100 px"/>
+                      <input type="file"   #fileInput name="file" class="form-control form-control-lg" required/>
+                      
+                      <label class="form-label" name="image"  >Image</label>
+
+                    </div>
+    
+                  
+                    <div class="row">
+         
+                      <div class="col-md-6 mb-4">
+                        
+
+                        
+                        
+    
+                        <select   id="form3Example8" class="select"  name="role" [(ngModel)]="employee.role" value="{{employee.role}}">
+                            <option value="" selected disabled hidden>Choose Role</option>
+                          
+                          
+                          
+                          <option value="EMPLOYER">EMPLOYER</option>
+                          <option value="MANAGER">MANAGER</option>
+                          
+                        </select>
+                        <br>
+                        <label for="">ROLE
+                        </label>
+                       
+                        <div *ngIf="form.controls['role']?.invalid && (form.controls['role']?.dirty || form.controls['role']?.touched)">
+                          <div style="color: red;" *ngIf="form.controls['role']?.errors?.['required']">Role is required.</div>
+                        </div>
+                        
+    
+                      </div>
+                    </div>
+    
+                   <br>
+                   <br>
+                   <br>
+                  
+    
+                  
+                    
+    
+                  
+                    <div class="d-flex justify-content-end pt-3">
+                      <button type="button" class="btn btn-light btn-lg bg">Reset </button>
+                      <button type="submit" class="btn btn-warning btn-lg ms-2 bg" [disabled]="form.invalid">Submit </button>
+                    </div>
+    
+                  </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+</div>
+ 

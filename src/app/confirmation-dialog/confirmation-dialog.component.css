@@ -1,0 +1,17 @@
+mat-dialog-content {
+    margin: 20px;
+  }
+  
+  mat-dialog-actions {
+    padding: 10px 20px;
+    justify-content: flex-end;
+  }
+  
+  button {
+    margin-left: 10px;
+  }
+  
+  button.mat-raised-button {
+    margin-left: 20px;
+  }
+  

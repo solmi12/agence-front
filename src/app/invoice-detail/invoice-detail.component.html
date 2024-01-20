@@ -1,0 +1,43 @@
+<app-dashbord-admin>
+    <div *ngIf="hasInvoiceData()">
+      <h2>Invoice Details</h2>
+      <ul>
+
+      <li *ngIf="invoice.paymentMethod !== null"> paymentMethod: {{ invoice.paymentMethod }}</li>
+      <li *ngIf="invoice.firstName !== null && invoice.firstName !== ''"> firstName: {{ invoice.firstName }}</li>
+      <li *ngIf="invoice.lastName !== null"> lastName: {{ invoice.lastName }}</li>
+      <li *ngIf="invoice.companyName !== null"> companyName: {{ invoice.companyName }}</li>
+
+      <li *ngIf="invoice.country !== null"> country: {{ invoice.country }}</li>
+  
+      <li *ngIf="invoice.street !== null"> street: {{ invoice.street }}</li>
+      <li *ngIf="invoice.apartment !== null"> apartment: {{ invoice.apartment }}</li>
+      <li *ngIf="invoice.city !== null"> city: {{ invoice.city }}</li>
+   
+      <li *ngIf="invoice.state !== null"> state: {{ invoice.state }}</li>
+  
+       <li *ngIf="invoice.codePostal !== null"> codePostal : {{ invoice.codePostal }}</li>
+      <li *ngIf="invoice.hajName !== null"> product : {{ invoice.hajName }}</li>
+      <li *ngIf="invoice.number !== null"> number: {{ invoice.number }}</li>
+    
+      <li *ngIf="invoice.email !== null"> email: {{ invoice.email }}</li>
+      <li *ngIf="invoice.quantityAd !== null">Quantity Adults: {{ invoice.quantityAd }}</li>
+      <li *ngIf="invoice.quantityVen !== null">Quantity Childs: {{ invoice.quantityVen }}</li>
+        <li *ngIf="invoice.hotelName !== null">Hotel Name: {{ invoice.hotelName }}</li>
+        <li *ngIf="invoice.typeRoom !== null">Room Type: {{ invoice.typeRoom }}</li>
+        <li *ngIf="invoice.viewOfMakkah !== null">View of Makkah: {{ invoice.viewOfMakkah }}</li>
+        <li *ngIf="invoice.numbnuit !== null">Number of Nights: {{ invoice.numbnuit }}</li>
+        <li *ngIf="invoice.numberOfAdults !== null">Number of Adults: {{ invoice.numberOfAdults }}</li>
+        <li *ngIf="invoice.numberOfChildren !== null">Number of Children: {{ invoice.numberOfChildren }}</li>
+        <li *ngIf="invoice.numberOfB !== null">Number of B: {{ invoice.numberOfB }}</li>
+        <li *ngIf="invoice.dateRes !== null">Reservation Date: {{ invoice.dateRes }}</li>
+        <li *ngIf="invoice.optionName !== null">Option Name: {{ invoice.optionName }}</li>
+        <!-- Add similar *ngIf checks for other properties -->
+
+
+
+        <li *ngIf="invoice. totalPrice !== null">total price: {{ invoice. totalPrice }}</li>
+      </ul>
+    </div>
+  </app-dashbord-admin>
+  

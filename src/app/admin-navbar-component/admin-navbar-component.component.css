@@ -1,0 +1,50 @@
+.navbar {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .navbar-logo {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 24px;
+  }
+  
+  .navbar-nav {
+    list-style: none;
+    display: flex;
+  }
+  
+  .navbar-nav li {
+    margin-right: 20px;
+  }
+  .custom-navbar {
+    background-color: white; /* Couleur de fond blanche */
+  }
+  
+  .custom-navbar .nav-link {
+    color: black; /* Couleur du texte en noir */
+  }
+  
+  .custom-navbar .navbar-toggler-icon {
+    background-color: black; /* Couleur de l'icône du bouton de menu en noir */
+  }
+  
+  /* Ajoutez d'autres styles personnalisés au besoin */
+  
+  .navbar-nav a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .navbar-nav a:hover {
+    color: #f0f0f0;
+  }
+  

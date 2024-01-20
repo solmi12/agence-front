@@ -1,0 +1,43 @@
+<app-dashbord-admin >
+<div class="container">
+    <h2>All Kontakts</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Title</th>
+          <th>Phone Number</th>
+          <th>Email</th>
+          <th>Last Name</th>
+          <th>Description</th>
+          <th></th> <!-- Empty header for delete icon -->
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let kontakt of kontaktList">
+          <td>{{ kontakt.kontaktId }}</td>
+          <td>{{ kontakt.title }}</td>
+          <td>{{ kontakt.numTlp }}</td>
+          <td>{{ kontakt.mail }}</td>
+          <td>{{ kontakt.nachname }}</td>
+          <td>{{ kontakt.description }}</td>
+          <td>
+            <button  *ngIf="kontakt.kontaktId !== null" (click)="deleteKontakt(kontakt.kontaktId)">
+              <i class="fa fa-trash"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <div class="container" *ngIf="selectedKontakt">
+    <h2>Selected Kontakt</h2>
+    <p>ID: {{ selectedKontakt.kontaktId }}</p>
+    <p>Title: {{ selectedKontakt.title }}</p>
+    <p>Phone Number: {{ selectedKontakt.numTlp }}</p>
+    <p>Email: {{ selectedKontakt.mail }}</p>
+    <p>Last Name: {{ selectedKontakt.nachname }}</p>
+    <p>Description: {{ selectedKontakt.description }}</p>
+  </div>
+</app-dashbord-admin>

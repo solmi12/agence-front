@@ -1,0 +1,267 @@
+body {
+    background-color: #f1f4f6;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+
+  .small-image-container {
+    width: 100px; /* Adjust the width as needed */
+    height: 100px; /* Adjust the height as needed */
+    margin: 10px 0;
+    align-self: flex-start;
+  }
+  .image-properties h1 {
+    margin-bottom: 5px; /* Adjust as needed to control spacing between hajName and nbrDays */
+  }
+  .image-properties p {
+    font-size: 1em;
+    color: #555;
+  }
+  .small-image-container img {
+    max-width: 500%;
+    max-height: 500%;
+    display: block;
+    margin:  35px;
+  }
+
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #ffffff;
+    margin: 0 auto;
+    max-width: 1000%;
+  }
+  
+  .image-container {
+    text-align: center;
+    position: relative;
+    margin-bottom: 20px;
+  }
+  
+  .background-image {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .image-properties {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    font-size: 1.5em;
+    color: #333;
+    border-radius: 5px;
+  }
+  
+  h1 {
+    font-size: 1.5em;
+    margin: 0;
+    color: #333;
+  }
+  
+  .properties-rectangle {
+    background-color:  #f1f4f6;
+    border-radius: 5px;
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 10px;
+    margin-top: 100px;
+    position: relative;
+  }
+  
+  .details-button-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  .details-button {
+    background-color: #F44336;
+    color: white;
+    border-radius: 0; /* Remove border-radius */
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .details-button:hover {
+    background-color: #D32F2F;
+  }
+  .offers-list {
+    list-style: circle;
+    margin-left: 2rem;
+    margin-bottom: 1.2rem;
+    line-height: 1.8;
+  }
+  
+  .offers-list li {
+    font-size: 1.1rem !important;
+    color: #333;
+   
+    list-style-position: inside !important;
+  }
+  
+  .other-properties-container strong {
+    
+    margin-bottom: 1rem;
+    padding-top: 2rem;
+    color: #f44336;
+    font-size: 22px;
+    margin-bottom: 1rem;
+      padding-top: 2rem;
+    font-family: "Quicksand", sans-serif;
+    font-weight: 400;
+  }
+  
+  .other-properties-container p strong {
+    margin-bottom: 20px; /* Adjust this value as needed */
+  }
+  /* Add these styles for the Buy button */
+  .buy-button {
+    background-color: #F44336;
+    color: white;
+    border: none; /* Remove the border */
+    border-radius: 0;
+    position: absolute;
+    top: 0px; /* Adjust the top position as needed */
+    right: 0px; /* Adjust the right position as needed */
+    padding: 10px 20px;
+    cursor: pointer;
+    z-index: 1; /* Ensure the button appears above other elements */
+    transition: background-color 0.3s; /* Add transition for smooth hover effect */
+  }
+  
+  .buy-button:hover {
+    background-color: #D32F2F; /* Change the background color on hover */
+  }
+  
+  .checkmark-true {
+    color: green;
+  }
+  
+  .x-false {
+    color: red;
+  }
+  /* ... (your existing styles) ... */
+
+.custom-title h1{
+
+    color: #F44336;
+    font-size: 20px;
+    margin-left: 500px;
+
+}
+
+.custom-title h4{
+
+    color: #F44336;
+    font-size: 20px;
+    margin-left: 500px;
+
+}
+.custom-title-input {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .custom-title-input h4 {
+    margin-right: 10px; /* Adjust as needed to control the spacing between h4 and input */
+  }
+  
+  input[type="number"] {
+    width: 150px; /* Adjust the input width as needed */
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+.custom-title h5{
+
+    color: #F44336;
+    font-size: 20px;
+    margin-left: 500px;
+
+}
+.custom-title h2{
+
+    color: #7E8588;
+    font-size: 14px;
+    margin-left: 500px;
+
+}
+
+.button_new {
+  height: 48px;
+  border-radius: 0;
+  font-family: "Rubik", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  background: #ef2400;
+  color: #fff;
+  margin-left: 400px;
+  margin-top: 170px;
+  padding-left: 20px;
+  padding-right: 40px;
+  position: relative;
+  transition: .2s all ease-in-out;
+  outline: none;
+
+}
+.custom-title h6{
+    
+
+    color: #7E8588;
+    font-size: 14px;
+    margin-left: 500px;
+
+}
+
+.custom-title h3 {
+    color: #F44336;
+    font-family: "Quicksand", sans-serif;
+    font-weight: 400;
+    font-size: 30px;
+    margin-top: 0px;
+    text-align: right;
+    margin-bottom: 20px;
+    margin-left: 500px;
+
+
+
+  }
+  .custom-title p {
+    color: #F44336;
+    font-family: "Quicksand", sans-serif;
+    font-weight: 400;
+    font-size: 30px;
+    margin-top: -70px;
+    text-align: right;
+    margin-bottom: 20px;
+    margin-left: 50px;
+
+
+
+  }
+  
+ 
+  
+  
+  .other-properties-container {
+    margin-top: 50px;
+  }
+  .haj-description {
+    margin-bottom: 20px; /* Adjust this value as needed */
+  }
+  
+  

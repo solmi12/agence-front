@@ -1,0 +1,172 @@
+<app-admin-navbar-component></app-admin-navbar-component>
+<div class="hotel-details-container" *ngIf="hotel" [style.backgroundImage]="'url(data:image/jpeg;base64,' + hotel.image1 + ')'">
+    <div class="left-content">
+    <div class="hotel-image">
+        <div class="detail-row title-row">
+            <p class="detail-title">{{ hotel.hotelName }}</p>
+        </div>
+        
+        <div class="detail-row title-row">
+            <p class="detail-title">{{ hotel.adresse }}</p>
+        </div>
+        
+    </div>
+
+    <div class="form-group">
+        <label for="roomTypeSelect">Room Type:</label>
+        <select id="roomTypeSelect" [(ngModel)]="selectedRoomType" (change)="selectedRoomTypeChanged()">
+            <option *ngFor="let roomType of hotel.roomTypes" [ngValue]="roomType">{{ roomType.typeRoom }}</option>
+        </select>
+    </div>
+    <div class="form-group" *ngIf="selectedRoomType">
+        <table class="room-details-table">
+            <tr>
+                <td>Type of Room:</td>
+                <td>{{ selectedRoomType.typeRoom }}</td>
+            </tr>
+            <tr>
+                <td>Price for Adults (per night):</td>
+                <td>{{ selectedRoomType.priceAdulte }}€</td>
+            </tr>
+            <tr>
+                <td>Price for Children (per night):</td>
+                <td>{{ selectedRoomType.priceChild }}€</td>
+            </tr>
+            <tr>
+                <td>Price for Children (B) (per night):</td>
+                <td>{{ selectedRoomType.priceChildB }}€</td>
+            </tr>
+            <tr>
+                <td>View of Makkah:</td>
+                <td>{{ selectedRoomType.viewOfMakkah }}</td>
+            </tr>
+            <tr>
+                <td>Max Occupancy:</td>
+                <td>{{ selectedRoomType.maxOccupancy }} persons</td>
+            </tr>
+        </table>
+    </div>
+</div>
+      
+
+    <!-- Dropdowns for the number of guests -->
+    <div class="guests-dropdowns" *ngIf="selectedRoomType">
+        <div class="form-group">
+            <label for="adultSelect">Number of Adults:</label>
+            <select id="adultSelect" [(ngModel)]="numberOfAdults">
+                <option *ngFor="let i of adultsRange">{{ i }}</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="childSelect">Number of Children:</label>
+            <select id="childSelect" [(ngModel)]="numberOfChildren">
+                <option *ngFor="let i of childrenRange">{{ i }}</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="childBSelect">Number of Children (B):</label>
+            <select id="childBSelect" [(ngModel)]="numberOfb">
+                <option *ngFor="let i of bRange">{{ i }}</option>
+            </select>
+        </div>
+   
+    <div class="form-group">
+        <label for="reservationOptionSelect">Reservation Option:</label>
+        <select id="reservationOptionSelect" [(ngModel)]="selectedReservationOption">
+            <option *ngFor="let option of hotel.reservationOptions" [ngValue]="option">{{ option.optionName }}</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="arrivalDate">Arrival Date:</label>
+        <input type="date" id="arrivalDate" name="arrivalDate" [(ngModel)]="arrivalDate">
+    </div>
+
+    <div class="form-group">
+        <label for="numberOfNights">Number of Nights:</label>
+        <select id="numberOfNights" name="numberOfNights" [(ngModel)]="numberOfNights">
+            <option *ngFor="let i of nightsRange">{{ i }}</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="viewOfMakkah">View of Makkah:</label>
+        <input type="checkbox" id="viewOfMakkah" name="viewOfMakkah" [(ngModel)]="viewOfMakkah">
+    </div>
+
+
+    <button class="btn btn-primary" (click)="addReservationAndFetch()" [disabled]="loading">
+        <span *ngIf="loading">Loading...</span>
+        <span *ngIf="!loading">Reserve</span>
+      </button>
+      
+    <!-- Display images with fade-in animation -->
+  
+</div>
+<div class="image-container">
+    <ng-container *ngFor="let image of hotelImages">
+        <div class="image-animation" *ngIf="image">
+            <img [src]="'data:image/jpeg;base64,' + image" alt="Hotel Image" class="background-image" />
+        </div>
+    </ng-container>
+</div>
+<div class="right-content">
+    <div class="reservations-table" *ngIf="reservations.length > 0">
+        <table>
+            <thead>
+                <tr>
+                    <th>Property</th>
+                    <th>Value</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let reservation of reservations; let i = index">
+                <tr>
+                    <td>Number Of Adults:</td>
+                    <td>{{ reservation.numberOfAdults }}</td>
+                </tr>
+                <tr>
+                    <td>Number Of Children between 10 and 15:</td>
+                    <td>{{ reservation.numberOfChildren }}</td>
+                </tr>
+                <tr>
+                    <td>Number of Children between 0 and 10:</td>
+                    <td>{{ reservation.numberOfB }}</td>
+                </tr>
+                <tr>
+                    <td>View of Makkah:</td>
+                    <td>
+                        <span *ngIf="reservation.viewOfMakkah; else notMakkah" style="color: green;">✔</span>
+                        <ng-template #notMakkah><span>-</span></ng-template>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>Date Reservation:</td>
+                    <td>{{ formatDate(reservation.dateRes!) }}</td>
+                  </tr>
+                <tr>
+                    <td>Number of Nights:</td>
+                    <td>{{ reservation.numbnuit }}</td>
+                </tr>
+                <tr>
+                    <td>Hotel:</td>
+                    <td>{{ reservation. hotelNamee }}</td>
+                </tr>
+                <tr>
+                    <td>Total Price:</td>
+                    <td>{{ reservation.totalpriceRes }}€</td>
+                </tr>
+                <tr>
+                    <td>Action:</td>
+                    <td>
+                        <button (click)="deleteRoomReservation()">Delete</button>
+                        <button (click)="navigateToCheckout()">Checkout</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</div>

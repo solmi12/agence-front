@@ -1,0 +1,136 @@
+.hotel-details-container {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.left-content {
+    flex: 100; /* Takes up the available space on the left */
+    margin-left: 40px;
+    margin-top: 30px;
+}
+
+
+/* Style for the left content area */
+.left-content {
+    float: left;
+    width: 50%; /* Adjust this as needed */
+    padding: 20px; /* Add your preferred spacing */
+}
+
+/* Style for the title rows */
+.title-row {
+    font-size: 17px; /* Adjust the font size as needed */
+    color: #651806; /* Change to your preferred color */
+}
+
+/* Style for the detail titles */
+.detail-title {
+    font-weight: bold; /* Make the text bold */
+    margin: 20px; /* Remove any default margin */
+}
+
+/* Style for the right content area containing the dropdowns */
+.guests-dropdowns {
+    margin-top: 70px;
+    float: left;
+    width: 50%; /* Adjust this as needed */
+    padding: 20px; /* Add your preferred spacing */
+}
+
+/* Style for the room details table */
+.room-details-table {
+    border-collapse: collapse;
+}
+
+.room-details-table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+}
+
+/* Style for form groups and select elements */
+.form-group {
+    margin-bottom: 10px; /* Add your preferred spacing */
+}
+
+select {
+    width: 100%;
+}
+
+/* Add any additional styling as needed */
+
+
+.right-content {
+    flex: 100; /* Takes up the available space on the right */
+    margin-right: 40px;
+    margin-top: 30px;
+    background-color: #fff; /* Background color for the card */
+    padding: 20px; /* Add some padding for spacing inside the card */
+    border: 1px solid #ccc; /* Add a border for the card */
+    border-radius: 8px; /* Rounded corners for the card */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Add a shadow for a card-like appearance */
+    display: inline-block; /* To prevent it from taking full width */
+    max-width: 400px; /* Set a maximum width for the card */
+}
+
+.reservations-table table {
+    width: 100%; /* Ensure the table takes up the full width of the card */
+}
+
+/* Style the table as needed */
+.reservations-table table th,
+.reservations-table table td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Add more styles as necessary to match your design preferences */
+
+
+.detail-row {
+    display: flex;
+    align-items: left;
+}
+
+.detail-label {
+    flex-basis: 30%;
+    font-weight: bold;
+}
+
+.detail-value {
+    flex-grow: 1;
+}
+
+/* Add animation to the images */
+.image-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: left;
+    gap: 10px;
+    margin-top: 500px;
+}
+
+.image-animation {
+    animation: fadeIn 0.5s ease forwards;
+    opacity: 0;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.background-image {
+    width: 200px;
+    height: 150px;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.background-image:hover {
+    transform: scale(1.05);
+}

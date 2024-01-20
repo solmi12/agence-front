@@ -1,0 +1,26 @@
+<app-dashbord-admin>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Haj Name</th>
+        <th>hotel</th>
+        <th>Total Price</th>
+        <th>action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let invoice of invoices">
+        <tr (click)="navigateToInvoiceDetail(invoice.invId)">
+          <td>{{ invoice.firstName }}</td>
+          <td>{{ invoice.lastName }}</td>
+          <td>{{ invoice.hajName }}</td>
+          <td>{{ invoice.hotelName }}</td>
+          <td>{{ invoice.totalPrice }}</td>
+          <button (click)="deleteInvoice($event, invoice.invId)">Delete</button>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+</app-dashbord-admin>

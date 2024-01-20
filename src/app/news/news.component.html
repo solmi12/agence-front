@@ -1,0 +1,26 @@
+<app-admin-navbar-component></app-admin-navbar-component>
+
+<div class="image-container">
+  <img src="../../assets/ban-makka-travel-frankfurt2.jpg" class="image" />
+</div>
+
+<div class="haj-details">
+  <div class="haj-card" *ngFor="let news of newsList">
+    <div class="haj-image-container">
+        <img *ngIf="news.image" [src]="'data:image/png;base64,' + news.image" alt="News Image" class="haj-image" />
+
+      </div>
+    <div class="haj-text">
+      <div class="haj-name">{{ news.newName }}</div>
+      <div class="haj-description">
+        {{ news.newDescription.length > 50 ? news.newDescription.substring(0, 50) + '...' : news.newDescription }}
+      </div>
+
+      <!-- Add any additional fields for news here -->
+
+      <div class="haj-details-button-container">
+        <button class="haj-details-button" (click)="navigateToDetails(news.newId || 0)">Details</button>
+      </div>
+    </div>
+  </div>
+</div>

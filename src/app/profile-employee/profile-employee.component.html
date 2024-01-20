@@ -1,0 +1,53 @@
+
+<div class="container body">
+  <app-navbar></app-navbar>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="osahan-account-page-left shadow-sm bg-white h-100">
+                <div class="border-bottom p-4 bg">
+                    <div class="osahan-user text-center">
+                        <div class="osahan-user-media">
+                           
+                                <img [src]=" 'data:image/png;base64,' + employee.imageUrl" width="150px" height="150px" class="mb-3 rounded-pill shadow-sm mt-1"  alt="profile imageUrl">
+                            
+                            <div class="osahan-user-media-body">
+                                <h5><b>Welcom</b> </h5> <h6>{{employee.firstname}} {{employee.lastName}} </h6>
+                                
+                                <p class="mb-1">Birth-Day: {{employee.birthDay}}</p>
+                                <p>{{employee.email}}</p>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               <div>
+                <!-----save work   by model-->
+                <div class="modal fade" id="exampleModal" #myModal tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" #model>
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                      
+                       
+                       
+                      </div>
+                    </div>
+                  </div>
+
+
+
+                
+                  <br>
+                 
+           
+                
+                
+                  
+                  <br>
+                  <br>
+
+
+  
+               </div>
+            </div>
+        </div>
+    
+</div>

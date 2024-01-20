@@ -1,0 +1,95 @@
+<app-admin-navbar-component></app-admin-navbar-component>
+
+<div class="image-container">
+    <img src="../../assets/makkatravel_hadjj_2.jpg" class="image" />
+  </div>
+  <section class="home-section home-section-features">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+					<div class="section-heading covid"><div>
+						<span>Alle angebotenen Reisen sind an die Einreisebestimmungen von Saudi Arabien gebunden. Seit Ende Februar 2020 gilt ein temporäres Einreiseverbot. Das Stattfinden der Reisen ist von der Aufhebung des Einreiseverbots abhängig. Wir informieren Sie, sobald die Umrah wieder möglich ist.</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="section-heading"><h2>Willkommen bei MakkaTravel</h2><p>Wir von MakkaTravel folgen stets dem Ziel, Dir unvergessliche und vielfältige Hadsch- und Umraprogramme anzubieten, in denen Du die schönsten Momente Deines Lebens genießt.
+Mit mehr als 15 Jahren Erfahrung organisieren wir als lizenzierter Hadsch- und Umra-Veranstalter jedes Jahr die Pilgerfahrt für viele Muslime nach der sich die Herzen vieler Menschen weltweit sehnen.</p></div>				<div class="home-features">
+					<div class="row">
+															<div class="col-sm-6 col-md-4">
+										<div class="home-feature">
+																							<figure>
+													<img src="https://makkatravel.de/wp-content/uploads/2021/01/experience.png" alt="Icon">
+												</figure>
+											<h3>Jahrelange Erfahrung</h3><p>Seit 2006 organisieren wir zuverlässig die Pilgerreisen für Hadsch &amp; Umra.</p>										</div>
+									</div>
+																		<div class="col-sm-6 col-md-4">
+										<div class="home-feature">
+																							<figure>
+													<img src="https://makkatravel.de/wp-content/uploads/2021/01/translator.png" alt="Icon">
+												</figure>
+											<h3>Mehrere Sprachen</h3><p>Unsere Reiseführer beherrschen Sprachen wie Deutsch, Türkisch, Arabisch und Urdu.</p>										</div>
+									</div>
+																		<div class="col-sm-6 col-md-4">
+										<div class="home-feature">
+																							<figure>
+													<img src="https://makkatravel.de/wp-content/uploads/2021/01/high-value.png" alt="Icon">
+												</figure>
+											<h3>Rundumbetreuung</h3><p>Wir sind sowohl am Wochenende als auch an Feiertagen rund um die Uhr erreichbar.</p>										</div>
+									</div>
+														</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<div class="section-heading">
+    <h2>Aktuelle Hadsch & Umra Angebote</h2>
+  </div>
+
+    
+<div class="haj-details">
+    <div class="haj-card" *ngFor="let haj of showNowTrueList">
+      <div class="haj-image-container">
+        <img *ngIf="haj.imageData" [src]="'data:image/png;base64,' + haj.imageData" alt="Haj Image" class="haj-image" />
+      </div>
+      <div class="haj-text">
+        <div class="haj-name">{{ haj.hajName }}</div>
+        <div class="haj-description">
+          {{ haj.hajDescription.length > 50 ? haj.hajDescription.substring(0, 50) + '...' : haj.hajDescription }}
+        </div>
+        
+        <div class="haj-price">{{ haj.price }}</div> <!-- Add the price here -->
+       
+    
+        <div class="haj-details-button-container">
+          <button class="haj-details-button" (click)="navigateToDetails(haj.hajId || 0)">Details</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section-heading"><h2>Unsere nächsten Reisen</h2></div>
+
+
+  <div class="haj-details1">
+    <div class="haj-card1" *ngFor="let haj of showNowFalseList">
+      <div class="haj-image-container1">
+        <img *ngIf="haj.imageData" [src]="'data:image/png;base64,' + haj.imageData" alt="Haj Image" class="haj-image1" />
+      </div>
+      <div class="haj-text1">
+        <div class="haj-name1">{{ haj.hajName }}</div>
+        <div class="haj-description1">
+          {{ haj.hajDescription.length > 50 ? haj.hajDescription.substring(0, 50) + '...' : haj.hajDescription }}
+        </div>
+        
+        <div class="haj-price1">{{ haj.price }}</div> <!-- Add the price here -->
+       
+    
+        <div class="haj-details-button-container1">
+          <button class="haj-details-button1" (click)="navigateToDetails(haj.hajId || 0)">Details</button>
+        </div>
+      </div>
+    </div>
+  </div>

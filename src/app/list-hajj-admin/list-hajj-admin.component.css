@@ -1,0 +1,52 @@
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .category-filter {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .faq-list {
+    border-top: 1px solid #ccc;
+    margin-top: 20px;
+  }
+  
+  .faq-item {
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+  }
+  
+  .faq-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .faq-actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .faq-description {
+    margin-top: 10px;
+  }
+  
+  .no-faqs-message {
+    margin-top: 20px;
+    font-style: italic;
+    color: #777;
+  }
+  
+  .mat-form-field {
+    margin-right: 20px;
+    min-width: 200px;
+  }
+  
+  button {
+    min-width: 100px;
+  }
+  

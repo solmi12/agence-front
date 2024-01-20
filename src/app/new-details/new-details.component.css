@@ -1,0 +1,140 @@
+body {
+    background-color: #f1f4f6;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f1f4f6;
+    margin: 0 auto;
+    max-width: 1000%;
+  }
+  
+  .image-container {
+    text-align: center;
+    position: relative;
+    margin-bottom: 20px;
+  }
+  
+  .background-image {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .image-properties {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    font-size: 1.5em;
+    color: #333;
+    border-radius: 5px;
+  }
+  
+  h1 {
+    font-size: 1.5em;
+    margin: 0;
+    color: #333;
+  }
+  
+  .properties-rectangle {
+    background-color: #ffffff;
+    border-radius: 5px;
+    width: 90%;
+    padding: 20px;
+    margin-bottom: 20px;
+    margin-top: 100px;
+    position: relative;
+  }
+  
+  .details-button-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  .details-button {
+    background-color: #F44336;
+    color: white;
+    border-radius: 0; /* Remove border-radius */
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .details-button:hover {
+    background-color: #D32F2F;
+  }
+  .offers-list {
+    list-style: circle;
+    margin-left: 2rem;
+    margin-bottom: 1.2rem;
+    line-height: 1.8;
+  }
+  
+  .offers-list li {
+    font-size: 1.1rem !important;
+    color: #333;
+   
+    list-style-position: inside !important;
+  }
+  
+  .other-properties-container strong {
+    
+    margin-bottom: 1rem;
+    padding-top: 2rem;
+    color: #f44336;
+    font-size: 22px;
+    margin-bottom: 1rem;
+      padding-top: 2rem;
+    font-family: "Quicksand", sans-serif;
+    font-weight: 400;
+  }
+  
+  .other-properties-container p strong {
+    margin-bottom: 20px; /* Adjust this value as needed */
+  }
+  /* Add these styles for the Buy button */
+  .buy-button {
+    background-color: #F44336;
+    color: white;
+    border: none; /* Remove the border */
+    border-radius: 0;
+    position: absolute;
+    top: 0px; /* Adjust the top position as needed */
+    right: 0px; /* Adjust the right position as needed */
+    padding: 10px 20px;
+    cursor: pointer;
+    z-index: 1; /* Ensure the button appears above other elements */
+    transition: background-color 0.3s; /* Add transition for smooth hover effect */
+  }
+  
+  .buy-button:hover {
+    background-color: #D32F2F; /* Change the background color on hover */
+  }
+  
+  .checkmark-true {
+    color: green;
+  }
+  
+  .x-false {
+    color: red;
+  }
+  
+  .other-properties-container {
+    margin-top: 100px;
+  }
+  .haj-description {
+    margin-bottom: 20px; /* Adjust this value as needed */
+  }
+  
+  

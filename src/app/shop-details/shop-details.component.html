@@ -1,0 +1,93 @@
+<app-admin-navbar-component></app-admin-navbar-component>
+
+<div class="container">
+  <div class="image-container">
+    <img *ngIf="haj?.imageData" [src]="'data:image/png;base64,' + haj?.imageData" alt="Haj Image" class="background-image" />
+    <div class="image-properties">
+      <h1>{{ haj?.hajName }}</h1>
+    </div>
+  </div>
+
+  <div class="small-image-container">
+    <img *ngIf="haj?.imageData" [src]="'data:image/png;base64,' + haj?.imageData" alt="Haj Image" class="small-background-image" />
+  </div>
+
+  <div class="custom-title">
+    <p>{{ haj?.hajName }} {{ haj?.nbrDays }}</p>
+    <h1 class="custom-title">Zimmerbelegung</h1>
+    <h2>{{haj?.typeRoom}}</h2>
+    <h3>Reisebegleitung hinzufügen</h3>
+    <div class="custom-title-input">
+      <h4>Erwachsene ab 12 Jahre {{haj?.priceAd}} €</h4>
+      <input type="number" placeholder="number" [(ngModel)]="cartQuantityAd" (ngModelChange)="calculateTotalPrice()" />
+    </div>
+    <div class="custom-title-input">
+      <h5>Kind von 2 bis 12 Jahre {{haj?.priceVen}} € </h5>
+      <input type="number" placeholder="number" [(ngModel)]="cartQuantityVen" (ngModelChange)="calculateTotalPrice()" />
+    </div>
+    <button (click)="updateCartItem()" class="button_new">In den Warenkorb</button>
+    <h6>Total Price: {{ totalPrice }}</h6>
+  </div>
+
+  <div class="properties-rectangle">
+    <p>{{ haj?.hajDescription }}</p>
+    
+    <p><strong>Wir Bieten:</strong></p>
+    <ul class="offers-list">
+      <li>{{ haj?.offre1 }}</li>
+      <li>{{ haj?.offre2 }}</li>
+      <li>{{ haj?.offre3 }}</li>
+      <li>{{ haj?.offre4 }}</li>
+      <li>{{ haj?.offre5 }}</li>
+      <li>{{ haj?.offre6 }}</li>
+      <li>{{ haj?.offre7 }}</li>
+      <li>{{ haj?.offre8 }}</li>
+      <li>{{ haj?.offre9 }}</li>
+      <li>{{ haj?.offre10 }}</li>
+    </ul>
+
+    <p><strong>Reisedetails:</strong></p>
+    <p>Hinflug</p>
+    <ul class="offers-list">
+      <li>Abflughafen:{{ haj?.departureAirport }}</li>
+      <li>{{ haj?.going  }}</li>
+    </ul>
+    <p>Rückflug</p>
+    <ul class="offers-list">
+      <li>Abflughafen:{{ haj?.retrnAirport }}</li>
+      <li>{{ haj?.coming  }}</li>
+    </ul>
+    <p>Airline</p>
+    <ul class="offers-list">
+      <li>{{ haj?.airline }}</li>
+    </ul>
+
+    <p><strong>Unterkünfte:</strong></p>
+    <p>Hotel in Medina</p>
+    <ul class="offers-list">
+      <li>{{ haj?.distanceMadina }} </li>
+    </ul>
+    <p>Hotel in Mekka</p>
+    <ul class="offers-list">
+      <li> {{ haj?.distanceMakka }} </li>
+    </ul>
+
+    <p class="haj-description"> {{ haj?.hajDescription2 }}</p>
+
+    <p><strong>INBEGRIFFEN</strong></p>
+    <ul class="offers-list">
+      <li>Airfare:  <span class="{{ haj?.airfare ? 'checkmark-true' : 'x-false' }}">{{ haj?.airfare ? '✔' : '✘' }}</span></li>
+      <li>Local Transportation<span class="{{ haj?.localTransportation ? 'checkmark-true' : 'x-false' }}">{{ haj?.localTransportation ? '✔' : '✘' }}</span></li>
+      <li>Accommodation  <span class="{{ haj?.accommodation ? 'checkmark-true' : 'x-false' }}">{{ haj?.accommodation ? '✔' : '✘' }}</span></li>
+      <li>Tour Guide  <span class="{{ haj?.tourGuide ? 'checkmark-true' : 'x-false' }}">{{ haj?.tourGuide ? '✔' : '✘' }}</span></li>
+    </ul>
+
+    <p><strong>NICHT INBEGRIFFEN</strong></p>
+    <ul class="offers-list">
+      <li>Entrance Fees  <span class="{{ haj?.entranceFees ? 'checkmark-true' : 'x-false' }}">{{ haj?.entranceFees ? '✔' : '✘' }}</span></li>
+      <li>Guide Gratuity<span class="{{ haj?.guideGratuity ? 'checkmark-true' : 'x-false' }}">{{ haj?.guideGratuity ? '✔' : '✘' }}</span></li>
+      <li>Lunch <span class="{{ haj?.lunch ? 'checkmark-true' : 'x-false' }}">{{ haj?.lunch ? '✔' : '✘' }}</span></li>
+      <li>Dinner   <span class="{{ haj?.dinner ? 'checkmark-true' : 'x-false' }}">{{ haj?.dinner ? '✔' : '✘' }}</span></li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,156 @@
+
+.container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+    /* Center items horizontally */
+  }
+  .row {
+    display: flex;
+    
+    justify-content: space-between;
+  }
+  
+  .datepicker-container {
+    margin: 10px; /* Optional: Add some spacing between the datepicker containers */
+  }
+  .body{
+    background-image: url("../../assets/abstract-digital-grid-black-background.jpg");
+    background-size: cover;
+    background-position:  center;
+
+  
+    /* Set the fixed background attachment */
+    background-attachment: fixed;
+
+  
+    /* Set the height to cover the entire viewport */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  
+  }
+ 
+
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    
+  }
+
+  .input-container {
+    display: flex;
+    gap: 20px; /* Adjust the gap between the inputs as needed */
+  }
+
+  .form-container mat-form-field {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .submit-button {
+    margin-top: 20px;
+    background: #638399;
+    background: -webkit-linear-gradient(59deg, #3A6073, #16222A);
+    background: linear-gradient(59deg, #00FEFF, #16222A);
+    color: #fff;
+    font-size: 18px; /* Adjust the font size to make the button larger */
+    padding: 15px 40px
+  }
+
+  .custom-green  {
+    background-color: green;
+    color: white;
+  }
+  
+  /* Red background for unavailable days */
+  .custom-red{
+    background-color: red;
+    color: white;
+  }
+  h1{
+    text-shadow: 2px 2px #3A6073;
+   color: white;
+   margin: 10px;
+  }
+  .order-card {
+    color: #fff;
+}
+
+.bg-c-red {
+    background: linear-gradient(45deg,#ed5634,#fb0303);
+}
+
+.bg-c-green {
+    background: linear-gradient(45deg,#2ed8b6,#59e0c5);
+}
+
+.bg-c-yellow {
+    background:gray;
+}
+
+
+
+
+.card {
+    border-radius: 5px;
+    -webkit-box-shadow: 0 1px 2.94px 0.06px rgba(4,26,55,0.16);
+    box-shadow: 0 1px 2.94px 0.06px rgba(4,26,55,0.16);
+    border: none;
+    margin-bottom: 30px;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    flex: 1;
+    margin: 10px;
+    
+  
+}
+
+.card .card-block {
+    padding: 25px;
+    
+}
+.card-wrapper {
+  height: 200px;
+  display: flex;
+  align-items: stretch; /* Set your desired height here */
+}
+.order-card i {
+    font-size: 26px;
+}
+
+.f-left {
+    float: left;
+}
+
+.f-right {
+    float: right;
+}
+
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+    align-items: center; /* Center the cards in mobile view */
+  }
+
+  .form-container {
+    max-width: none;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 300px; /* Optional: Limit the max width of the cards for better mobile appearance */
+  }
+}
+
+.custom-hint {
+  color: white; /* Change the text color to white */
+  font-size: 18px;
+  text-align: center; 
+  margin: 1px;/* Adjust the font size as per your preference */
+}

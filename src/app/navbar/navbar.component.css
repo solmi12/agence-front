@@ -1,0 +1,13 @@
+.custom-navbar {
+  background-color: white; /* Couleur de fond blanche */
+}
+
+.custom-navbar .nav-link {
+  color: black; /* Couleur du texte en noir */
+}
+
+.custom-navbar .navbar-toggler-icon {
+  background-color: black; /* Couleur de l'icône du bouton de menu en noir */
+}
+
+/* Ajoutez d'autres styles personnalisés au besoin */

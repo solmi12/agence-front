@@ -1,0 +1,39 @@
+<app-dashbord-admin>
+    <div class="container">
+      <h2>List of Haj Items</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Haj Name</th>
+            <th>Price</th>
+            <th>PriceVen</th>
+            <th>PriceAd</th>
+            <th>Going</th>
+            <th>Coming</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let haj of hajList">
+            <td>{{ haj.hajName }}</td>
+            <td>{{ haj.price }}</td>
+            <td>{{ haj.priceVen }}</td>
+            <td>{{ haj.priceAd }}</td>
+            <td>{{ haj.going }}</td>
+            <td>{{ haj.coming }}</td>
+            <td>
+              <div class="action-buttons">
+                <button (click)="deleteHaj(haj.hajId!)" class="delete-button">
+                  Delete
+                </button>
+                <button (click)="updateHaj(haj.hajId!)" class="update-button">
+                  Update
+                </button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </app-dashbord-admin>
+  

@@ -1,0 +1,40 @@
+<app-dashbord-admin>
+    <div class="add-uberns-form">
+      <h2>Add Uberns</h2>
+  
+      <form [formGroup]="ubernsForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="firstName">First Name</label>
+          <input type="text" id="firstName" formControlName="firstName" required>
+        </div>
+  
+        <div class="form-group">
+          <label for="secondName">Second Name</label>
+          <input type="text" id="secondName" formControlName="secondName" required>
+        </div>
+  
+        <div class="form-group">
+          <label for="thirdName">Third Name</label>
+          <input type="text" id="thirdName" formControlName="thirdName" required>
+        </div>
+  
+        <div class="form-group">
+          <label for="firstPicture">First Picture</label>
+          <input type="file" id="firstPicture" (change)="onImageChange($event, 'image1')">
+        </div>
+  
+        <div class="form-group">
+          <label for="secondPicture">Second Picture</label>
+          <input type="file" id="secondPicture" (change)="onImageChange($event, 'image2')">
+        </div>
+  
+        <div class="form-group">
+          <label for="thirdPicture">Third Picture</label>
+          <input type="file" id="thirdPicture" (change)="onImageChange($event, 'image3')">
+        </div>
+  
+        <button type="submit" class="btn btn-primary">Add Uberns</button>
+      </form>
+    </div>
+  </app-dashbord-admin>
+  

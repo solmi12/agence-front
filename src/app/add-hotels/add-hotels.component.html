@@ -1,0 +1,102 @@
+<app-dashbord-admin>
+  <div class="add-hotel-container">
+    <h2>Add New Hotel</h2>
+    <form [formGroup]="hotelForm" (ngSubmit)="onSubmit()" *ngIf="isAdmin">
+      <div class="form-group">
+        <label for="hotelName">Hotel Name:</label>
+        <input type="text" id="hotelName" name="hotelName" formControlName="hotelName" required>
+      </div>
+      <div class="form-group">
+        <label for="numberOfStars">Hotel Stars:</label>
+        <input type="number" id="numberOfStars" name="numberOfStars" formControlName="numberOfStars" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="adresse">Address:</label>
+        <input type="text" id="adresse" name="adresse" formControlName="adresse" required>
+      </div>
+      <div class="form-group">
+        <label for="location">location:</label>
+        <input type="text" id="location" name="location" formControlName="location" required>
+      </div>
+      <div class="form-group">
+        <label for="priceAb">priceAb:</label>
+        <input type="text" id="priceAb" name="priceAb" formControlName="priceAb" required>
+      </div>
+      <div class="form-group">
+        <label for="image1">Upload Image 1:</label>
+        <input type="file" id="image1" name="image1" (change)="onImageChange($event, 'image1')">
+      </div>
+      <div class="form-group">
+        <label for="image2">Upload Image 2:</label>
+        <input type="file" id="image2" name="image2" (change)="onImageChange($event, 'image2')">
+      </div>
+      <div class="form-group">
+        <label for="image3">Upload Image 3:</label>
+        <input type="file" id="image3" name="image3" (change)="onImageChange($event, 'image3')">
+      </div>
+      <div class="form-group">
+        <label for="image4">Upload Image 4:</label>
+        <input type="file" id="image4" name="image4" (change)="onImageChange($event, 'image4')">
+      </div>
+      <div class="form-group">
+        <label for="image5">Upload Image 5:</label>
+        <input type="file" id="image5" name="image5" (change)="onImageChange($event, 'image5')">
+      </div>
+      <div class="form-group">
+        <label for="image6">Upload Image 6:</label>
+        <input type="file" id="image6" name="image6" (change)="onImageChange($event, 'image6')">
+      </div>
+
+      <div class="form-group">
+        <label for="image7">Upload Image 7:</label>
+        <input type="file" id="image7" name="image7" (change)="onImageChange($event, 'image7')">
+      </div>
+      <div class="form-group">
+        <label for="image8">Upload Image 8:</label>
+        <input type="file" id="image8" name="image8" (change)="onImageChange($event, 'image8')">
+      </div>
+      <div class="form-group">
+        <label for="image9">Upload Image 9:</label>
+        <input type="file" id="image9" name="image9" (change)="onImageChange($event, 'image9')">
+      </div>
+
+      <div class="form-group">
+        <label for="image10">Upload Image 10:</label>
+        <input type="file" id="image10" name="image10" (change)="onImageChange($event, 'image10')">
+      </div>
+      <!-- Rest of your form (Room Types, Reservation Options) -->
+      <!-- Add Room Types -->
+      <div formArrayName="roomTypes">
+        <button type="button" (click)="addRoomType()">Add Room Type</button>
+        <div *ngFor="let roomType of roomTypesArray.controls; let i = index" [formGroupName]="i">
+          <label for="typeRoom">Room Type Name:</label>
+          <input type="text" id="typeRoom" name="typeRoom" formControlName="typeRoom" required>
+          <label for="priceAdulte">Room Adult Price:</label>
+          <input type="number" id="priceAdulte" name="priceAdulte" formControlName="priceAdulte" required>
+          <label for="priceChild">Room Child Price (2-12 years):</label>
+          <input type="number" id="priceChild" name="priceChild" formControlName="priceChild" required>
+          <label for="priceChildB">Room Child Price (0-2 years):</label>
+          <input type="number" id="priceChildB" name="priceChildB" formControlName="priceChildB" required>
+          <label for="viewOfMakkah">View of Makkah Price:</label>
+          <input type="number" id="viewOfMakkah" name="viewOfMakkah" formControlName="viewOfMakkah" required>
+          <label for="maxOccupancy">Max Occupancy Reservation:</label>
+          <input type="number" id="maxOccupancy" name="maxOccupancy" formControlName="maxOccupancy" required>
+        </div>
+      </div>
+      <!-- Add Reservation Options -->
+      <div formArrayName="reservationOptions">
+        <button type="button" (click)="addReservationOption()">Add Reservation Option</button>
+        <div *ngFor="let reservationOption of reservationOptionsArray.controls; let i = index" [formGroupName]="i">
+          <label for="reservationOptionName">Reservation Option Name:</label>
+          <input type="text" id="reservationOptionName" name="reservationOptionName" formControlName="optionName" required>
+          <label for="reservationOptionPrice">Reservation Option Price:</label>
+          <input type="number" id="reservationOptionPrice" name="reservationOptionPrice" formControlName="price" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <button type="submit">Add Hotel</button>
+      </div>
+    </form>
+  </div>
+</app-dashbord-admin>

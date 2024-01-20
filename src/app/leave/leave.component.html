@@ -1,0 +1,76 @@
+<div class=" body">
+
+  <br>
+  <br>
+  <div class="">
+    <div class=" form-container">
+      <h1 >Leave Request</h1>
+      <br>
+      <br>
+
+      <div class="input-container">
+
+        
+        <mat-form-field 
+        >
+          <mat-label>Enter a date range</mat-label>
+          <mat-date-range-input  [rangePicker]="picker" [dateFilter]="dateFilter" >
+            <input  #dateRangeStart   matStartDate placeholder="Start date" (focus)="picker.open()"  >{{ startDate | date: 'MM/dd/yyyy' }}
+            <input #dateRangeEnd matEndDate placeholder="End date" (focus)="picker.open()" (dateChange)="dateRangeChange(dateRangeStart, dateRangeEnd)" >{{ endDate | date: 'MM/dd/yyyy' }}
+          </mat-date-range-input>
+          
+          <mat-hint class="custom-hint">{{ startDate | date: 'MM/dd/yyyy' }} – {{ endDate | date: 'MM/dd/yyyy' }}</mat-hint>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-date-range-picker [dateClass]="dateClass"  #picker [startAt]="startAt" >
+            <mat-calendar class="custom-red"></mat-calendar>
+          </mat-date-range-picker>
+        </mat-form-field>
+      </div>
+      <button (click)="submit()" class="submit-button" mat-raised-button color="primary" >Submit</button>
+    </div>
+  </div>
+  <br>
+
+
+<br>
+  <div class="row" >
+    
+    
+    <div class="col card-wrapper" *ngFor="let leaveRequest of leaveRequests">
+        <div class="card  order-card" [ngClass]="selectBg(leaveRequest.accepted)">
+         
+            <div class="card-block">
+              <ng-container *ngIf="isActif(leaveRequest.accepted)">
+                <div class=" d-flex justify-content-end">
+                                  
+                  
+                  <a (click)="deleteRequest(leaveRequest.id)" style="color:black;"  class="icon-button ">
+                    <i class="material-icons icon2">&#xE5C9;</i>
+                   
+                  </a>
+               
+                
+                  </div>
+              </ng-container>
+                <h6 class="m-b-20">Status: </h6>
+             
+                <p class="text-right"><span>{{leaveRequest.accepted}}</span></p>
+                <h6>Duration:</h6>
+                <p class="m-b-0"> <span class="">{{leaveRequest.debutDate}} -></span> <span class="">{{leaveRequest.finDate}}</span></p>
+            </div>
+        </div>
+    </div>
+  
+    
+   
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+   
+  </div>
+</div>
+

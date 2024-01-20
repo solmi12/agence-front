@@ -1,0 +1,42 @@
+<app-admin-navbar-component></app-admin-navbar-component>
+<div class="image-container">
+    <img src="../../assets/ban-makka-travel-frankfurt2.jpg" class="image" />
+</div>
+
+<div class="cart-container">
+    <table class="cart-table">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Adultes</th>
+                <th>Childs</th>
+            </tr>
+        </thead>
+    <!-- ... -->
+    <tbody *ngIf="cartItems && cartItems.length > 0">
+        <tr *ngFor="let cartItem of cartItems">
+        <td>{{ cartItem.haj.hajName }}</td>
+        <td>{{ cartItem.quantityAd }}</td>
+        <td>{{ cartItem.quantityVen }}</td>
+        <td>
+            <i class="fa fa-times delete-icon" (click)="deleteCartItem(cartItem)">delete</i>
+        </td>
+    </tr>
+</tbody>
+<!-- ... -->
+
+          
+    </table>
+
+    <!-- Display the total price if there are items in the cart -->
+    <h3 *ngIf="cartItems && cartItems.length > 0">Total Price: {{ totalPriceCart }} €</h3>
+
+
+    <!-- Add a message for an empty cart -->
+    <div class="empty-cart-message" *ngIf="cartItems &&cartItems.length === 0">
+        Your cart is empty.
+    </div>
+
+    <!-- Add a button to navigate to the Checkout component -->
+    <button (click)="navigateToCheckout()" [disabled]="cartItems && cartItems.length === 0">Proceed to Checkout</button>
+</div>

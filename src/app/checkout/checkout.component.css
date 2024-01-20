@@ -1,0 +1,87 @@
+/* Add this CSS to your stylesheet or use a separate CSS file */
+
+.checkout-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    font-weight: bold;
+}
+
+select, input[type="text"], input[type="email"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button[type="submit"] {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button[type="submit"]:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.cart-details {
+    margin-top: 20px;
+}
+
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.cart-table th, .cart-table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+}
+
+.cart-table th {
+    background-color: #f2f2f2;
+}
+.woocommerce-checkout #payment ul.payment_methods {
+    text-align: left;
+    padding: 1em;
+    border-bottom: 1px solid #cfc8d8;
+    margin: 0;
+    list-style: none outside;
+}
+/* Additional CSS for radio buttons and labels */
+.payment-method-container {
+  
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(136, 139, 136); /* Change to your desired color */
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 80px;
+    margin-bottom: 40px;
+}
+
+.payment-method-container label {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    color: white; /* Text color */
+    font-size: 18px; /* Change to your desired font size */
+}
+.payment-method-container label img {
+    max-height: 50px;
+    max-width: 50px;
+    margin-right: 10px; /* Adjust the margin as needed */
+}
+

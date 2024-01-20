@@ -1,0 +1,39 @@
+   
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Update  Task</h1>
+          <button type="button" (click)="closeModal()" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="container">
+                <form  #form="ngForm" (ngSubmit)="saveWorkUpdated(form)">
+                    <!-- Title input -->
+                    <div class="form-outline mb-4" >
+                      <input type="text" name="title" id="form1Example1" class="form-control" ngModel [(ngModel)]="work.title" required/>
+                      <label class="form-label" for="form1Example1">Title of Task</label>
+                    </div>
+                  
+                    <div class="form-outline mb-4">
+                      <input type="datetime-local" name="startTime" id="form1Example2" class="form-control" ngModel [(ngModel)]="work.startTime" required/>
+                      <label class="form-label" for="form1Example2">Start Time</label>
+                    </div>
+                    <div class="form-outline mb-4">
+                        <input type="number" name="duration" id="form1Example3" class="form-control" ngModel [(ngModel)]="work.duration" required />
+                        <label class="form-label" for="form1Example3">Duration (in hours):</label>
+                      </div>
+                      <div class="form-outline mb-4">
+                        <textarea type="text" name="description" id="form1Example4" class="form-control" ngModel [(ngModel)]="work.description" required></textarea>
+                        <label class="form-label" for="form1Example4">Description:</label>
+                      </div>
+                  
+                   
+                    
+                  
+                    <!-- Submit button -->
+                    <button type="submit" class="btn btn-primary btn-block">submit the task</button>
+                  </form>
+            </div>
+          </div>
+       
+      </div>
+    

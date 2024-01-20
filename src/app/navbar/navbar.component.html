@@ -1,0 +1,45 @@
+  <nav  class="navbar navbar-expand-md custom-navbar ">
+    <div class="navbar">
+      <img src="../../assets/logo1.png" height="70px"  alt="Company Logo"> 
+
+      
+      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav mx-auto">
+          <li *ngIf="admin" class="nav-item">
+            <a class="nav-link mx-2 active" aria-current="page" routerLink="/adminProfile">profile</a>
+          </li >
+          <li *ngIf="employee" class="nav-item">
+            <a class="nav-link mx-2 active" aria-current="page" routerLink="/profile">profile</a>
+          </li>
+          <li *ngIf="employee" class="nav-item">
+            <a class="nav-link mx-2" routerLink="leave">leave Request</a>
+          </li>
+          <li *ngIf="employee" class="nav-item">
+            <a class="nav-link mx-2" routerLink="tasks">tasks</a>
+          </li>
+          <li *ngIf="admin"  class="nav-item">
+            <a class="nav-link mx-2" routerLink="leaveMangement">Pending Request</a>
+          </li>
+          <li *ngIf="admin" class="nav-item">
+            <a class="nav-link mx-2" routerLink="registerEmployee">register Employee</a>
+          </li>
+          <li *ngIf="admin" class="nav-item">
+            <a class="nav-link mx-2" routerLink="employees">Employees</a>
+          </li>
+ 
+        
+          <li *ngIf="isLoggedIn"  class="nav-item">
+            <a  class="nav-link mx-2 btn rounded-0 btn-danger " (click)="logout()">log out</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+
+  </nav>
+ 

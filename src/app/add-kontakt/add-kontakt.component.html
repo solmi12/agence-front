@@ -1,0 +1,54 @@
+
+<div class="page">
+  <app-admin-navbar-component></app-admin-navbar-component>
+  <img src="../../assets/ban-makka-travel-frankfurt2.jpg" class="image">
+
+  <div class="content">
+    <h2 class="title">Hauptbüro</h2>
+    <div class="columns">
+      <div class="column">
+        <h3 class="subtitle">Frankfurt</h3>
+        <p>Sees Travel GmbH Porzellanhofstraße 4 60313 Frankfurt am Main</p>
+        <p>069 920 200 30</p>
+        <p>info@seestravel.de</p>
+      </div>
+
+      <div class="column">
+        <h3 class="subtitle">Öffnungszeiten:</h3>
+        <p>Montag bis Freitag</p>
+        <p>9.00 bis 17 Uhr</p>
+        <p>Samstag Sonntag</p>
+        <p>Geschlossen</p>
+      </div>
+    </div>
+
+
+
+    
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="title">Vorname</label>
+        <input type="text" id="title" [(ngModel)]="kontakt.title" name="title" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="nachname">nachname</label>
+        <input type="text" id="nachname" [(ngModel)]="kontakt.nachname" name="nachname" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="numTlp">Mobil</label>
+        <input type="text" id="numTlp" [(ngModel)]="kontakt.numTlp" name="numTlp" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="mail">E-Mail</label>
+        <input type="email" id="mail" [(ngModel)]="kontakt.mail" name="mail" class="form-control" required>
+      </div>
+     
+      <div class="form-group">
+        <label for="description">Nachricht</label>
+        <textarea id="description" [(ngModel)]="kontakt.description" name="description" class="form-control" required></textarea>
+      </div>
+  
+      <button type="submit" class="btn btn-primary">Add Kontakt</button>
+    </form>
+  </div>
+  

@@ -1,0 +1,91 @@
+<app-admin-navbar-component></app-admin-navbar-component>
+
+<div class="container">
+  <div class="image-container">
+    <img *ngIf="haj?.imageData" [src]="'data:image/png;base64,' + haj?.imageData" alt="Haj Image" class="background-image" />
+    <div class="image-properties">
+      <h1>{{ haj?.hajName }}</h1>
+    </div>
+  </div>
+  <div class="properties-rectangle">
+    <h2 class="details-button">Details</h2>
+    <button class="buy-button" (click)="addToCart()">Buy</button>
+
+
+    
+    <div class="other-properties-container">
+      <p class="haj-description" *ngIf="haj?.hajDescription"> {{ haj?.hajDescription }}</p>
+      <p><strong>Wir Bieten:</strong></p>
+      <ul class="offers-list">
+        <li *ngIf="haj?.offre1 !== null && haj?.offre1 !== 'undefined'">{{ haj?.offre1 }}</li>
+        <li *ngIf="haj?.offre2 !== null && haj?.offre2 !== 'undefined'">{{ haj?.offre2 }}</li>
+        <li *ngIf="haj?.offre3 !== null && haj?.offre3 !== 'undefined'">{{ haj?.offre3 }}</li>
+        <li *ngIf="haj?.offre4 !== null && haj?.offre4 !== 'undefined'">{{ haj?.offre4 }}</li>
+        <li *ngIf="haj?.offre5 !== null && haj?.offre5 !== 'undefined'">{{ haj?.offre5 }}</li>
+        <li *ngIf="haj?.offre6 !== null && haj?.offre6 !== 'undefined'">{{ haj?.offre6 }}</li>
+        <li *ngIf="haj?.offre7 !== null && haj?.offre7 !== 'undefined'">{{ haj?.offre7 }}</li>
+        <li *ngIf="haj?.offre8 !== null && haj?.offre8 !== 'undefined'">{{ haj?.offre8 }}</li>
+        <li *ngIf="haj?.offre9 !== null && haj?.offre9 !== 'undefined'">{{ haj?.offre9 }}</li>
+        <li *ngIf="haj?.offre10 !== null && haj?.offre10 !== 'undefined'">{{ haj?.offre10 }}</li>
+      </ul>
+  
+
+      <p><strong>Reisedetails:</strong></p>
+      <p>Hinflug</p>
+      <ul class="offers-list">
+        <li>Abflughafen:{{ haj?.departureAirport }}</li>
+        <li>{{ haj?.going  }}</li>
+      </ul>
+     <p>Rückflug</p>
+     <ul class="offers-list">
+      <li>Abflughafen:{{ haj?.retrnAirport }}</li>
+      <li>{{ haj?.coming  }}</li>
+    </ul>
+    <p>Airline</p>
+    <ul class="offers-list">
+      <li>{{ haj?.airline }}</li>
+     
+    </ul>
+   
+    <p><strong>Unterkünfte:</strong></p>
+    <p>Hotel in Medina</p>
+    <ul class="offers-list">
+      <li>{{ haj?.distanceMadina }} </li>
+     
+    </ul>
+    <p>Hotel in Mekka</p>
+    <ul class="offers-list">
+      <li> {{ haj?.distanceMakka }} </li>
+     
+    </ul>
+
+
+    <p class="haj-description"> {{ haj?.hajDescription2 }}</p>
+   
+ 
+    <p><strong>INBEGRIFFEN</strong></p>
+    <ul class="offers-list">
+      <p>Airfare:  <span class="{{ haj?.airfare ? 'checkmark-true' : 'x-false' }}">{{ haj?.airfare ? '✔' : '✘' }}</span></p>
+      <p>Local Transportation<span class="{{ haj?.localTransportation ? 'checkmark-true' : 'x-false' }}">{{ haj?.localTransportation ? '✔' : '✘' }}</span></p>
+      <p>Accommodation  <span class="{{ haj?.accommodation ? 'checkmark-true' : 'x-false' }}">{{ haj?.accommodation ? '✔' : '✘' }}</span></p>
+      <p>Tour Guide  <span class="{{ haj?.tourGuide ? 'checkmark-true' : 'x-false' }}">{{ haj?.tourGuide ? '✔' : '✘' }}</span></p>
+     
+    </ul>
+     
+    
+      <p><strong>NICHT INBEGRIFFEN</strong></p>
+
+      <ul class="offers-list">
+
+      <p>Entrance Fees  <span class="{{ haj?.entranceFees ? 'checkmark-true' : 'x-false' }}">{{ haj?.entranceFees ? '✔' : '✘' }}</span></p>
+      <p>Guide Gratuity<span class="{{ haj?.guideGratuity ? 'checkmark-true' : 'x-false' }}">{{ haj?.guideGratuity ? '✔' : '✘' }}</span></p>
+      <p>Lunch <span class="{{ haj?.lunch ? 'checkmark-true' : 'x-false' }}">{{ haj?.lunch ? '✔' : '✘' }}</span></p>
+      <p>Dinner   <span class="{{ haj?.dinner ? 'checkmark-true' : 'x-false' }}">{{ haj?.dinner ? '✔' : '✘' }}</span></p>
+
+    </ul>
+
+    </div>
+  </div>
+</div>
+
+

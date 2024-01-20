@@ -1,0 +1,22 @@
+<app-admin-navbar-component></app-admin-navbar-component>
+
+<div class="container">
+  <div class="image-container">
+    <img *ngIf="new?.image" [src]="'data:image/png;base64,' + new?.image" alt="Haj Image" class="background-image" />
+    <div class="image-properties">
+      <h1>{{ new?.newName }}</h1>
+    </div>
+  </div>
+
+   
+
+
+    
+    <div class="other-properties-container">
+      <p class="new-description"> {{ new?.newDescription }}</p>
+    
+
+  </div>
+</div>
+
+

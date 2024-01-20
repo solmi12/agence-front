@@ -1,0 +1,25 @@
+<app-admin-navbar-component></app-admin-navbar-component>
+<div class="image-container">
+  <img src="../../assets/ban-makka-travel-frankfurt2.jpg" class="image" />
+</div>
+
+<div class="haj-details">
+  <div class="haj-card" *ngFor="let haj of hajList">
+    <div class="haj-image-container">
+      <img *ngIf="haj.imageData" [src]="'data:image/png;base64,' + haj.imageData" alt="Haj Image" class="haj-image" />
+    </div>
+    <div class="haj-text">
+      <div class="haj-name">{{ haj.hajName }}</div>
+      <div class="haj-description">
+        {{ haj.hajDescription.length > 50 ? haj.hajDescription.substring(0, 50) + '...' : haj.hajDescription }}
+      </div>
+      
+      <div class="haj-price">{{ haj.price }}</div> <!-- Add the price here -->
+     
+  
+      <div class="haj-details-button-container">
+        <button class="haj-details-button" (click)="navigateToDetails(haj.hajId || 0)">Details</button>
+      </div>
+    </div>
+  </div>
+</div>

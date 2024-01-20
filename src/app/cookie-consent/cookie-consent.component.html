@@ -1,0 +1,7 @@
+<p>cookie-consent works!</p>
+<div class="cookie-consent-banner" *ngIf="!consentGiven">
+    <p>We use cookies to improve your experience on our website.</p>
+    <button (click)="acceptConsent()">Accept</button>
+    <button (click)="rejectConsent()">Reject</button>
+  </div>
+  

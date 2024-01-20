@@ -1,0 +1,86 @@
+<div class="container body">
+  <app-navbar></app-navbar>
+
+  <div class="row">
+    <div class="col-md-3">
+      <div class="osahan-account-page-left shadow-sm bg-dark h-100">
+        <div class="border-bottom p-4 bg">
+          <div class="osahan-user text-center">
+            <div class="osahan-user-media">
+              <img *ngIf="employee?.imageUrl" [src]="'data:image/png;base64,' + employee?.imageUrl" width="150px" height="150px" class="mb-3 rounded-pill shadow-sm mt-1" alt="profile imageUrl">
+            </div>
+            
+          
+            
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="button-container">
+                <div class="wrapper">
+                  <a class="a" routerLink="/registerEmployee"><span>Register Employee</span></a>
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="button-container">
+                <div class="wrapper">
+                  <a class="a" routerLink="/employees"><span>View Employees</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+      </div>
+    </div>
+
+    <!-- New content in the right column -->
+    <div class="col-md-9">
+      <div class="osahan-user-media-body">
+        <h5><b>Welcome</b></h5>
+        <h6>{{employee?.firstname!}} {{employee?.lastName!}}</h6>
+        <p>{{employee?.email!}}</p>
+        <button class="btn btn-primary" (click)="showUpdateForm()">Update Profile</button>
+      </div>
+
+<!-- Update Form -->
+<div *ngIf="showUpdateFormFlag">
+  <h3>Update Profile</h3>
+  <form (ngSubmit)="updateEmployee()">
+    <div class="form-group">
+      <label for="firstName">First Name:</label>
+      <input type="text" id="firstName" [(ngModel)]="employee!.firstname" name="firstName" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label for="lastName">Last Name:</label>
+      <input type="text" id="lastName" [(ngModel)]="employee!.lastName" name="lastName" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" [(ngModel)]="employee!.email" name="email" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" id="password" [(ngModel)]="employee!.password" name="password" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label for="birthDay">Birth Day:</label>
+      <input type="date" id="birthDay" [(ngModel)]="employee!.birthDay" name="birthDay" class="form-control">
+    </div>
+    
+    <div class="form-group">
+      <label for="imageUrl">Profile Picture:</label>
+      <input type="file" id="imageUrl" (change)="onImageChange($event)" accept="image/*" class="form-control">
+    </div>
+  
+
+    <button type="submit" class="btn btn-success">Save Changes</button>
+  </form>
+</div>
+
+    </div>
+  </div>
+</div>

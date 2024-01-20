@@ -1,0 +1,64 @@
+<app-dashbord-admin>
+<div class="faq-container">
+  <h2>Frequently Asked Questions</h2>
+  <div class="category-filter">
+    <mat-form-field appearance="fill">
+      <mat-label>Filter by Category</mat-label>
+      <mat-select [(value)]="selectedCategory" (selectionChange)="filterByCategory($event.value)">
+        <mat-option *ngFor="let category of categories" [value]="category">
+          {{ category }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="showAll()">Show All</button>
+  </div>
+  <div *ngIf="faqs.length === 0" class="no-faqs-message">
+    No FAQs available.
+  </div>
+  <div class="faq-list">
+    <table>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let faq of faqs" class="faq-item">
+          <td (click)="toggleDescription(faq)">
+            <ng-container *ngIf="faq !== editingFaq; else editModeTitle">
+              {{ faq.titleFaq }}
+            </ng-container>
+            <ng-template #editModeTitle>
+              <input type="text" [(ngModel)]="faq.titleFaq">
+            </ng-template>
+            <div *ngIf="faq.showDescription" class="faq-description">{{ faq.descriptionFaq }}</div>
+          </td>
+          <td>
+            <ng-container *ngIf="faq !== editingFaq; else editModeDesc">
+              {{ faq.descriptionFaq }}
+            </ng-container>
+            <ng-template #editModeDesc>
+              <textarea [(ngModel)]="faq.descriptionFaq"></textarea>
+            </ng-template>
+          </td>
+          <td>
+            <div class="faq-actions">
+              <button mat-icon-button color="primary" (click)="toggleDescription(faq)">
+                <mat-icon>{{ faq.showDescription ? 'keyboard_arrow_up' : 'keyboard_arrow_down' }}</mat-icon>
+              </button>
+              <button mat-button color="primary" *ngIf="isAdmin && editingFaq" (click)="confirmEdit()">Confirm Edit</button>
+              <button mat-button color="warn" *ngIf="isAdmin && editingFaq" (click)="cancelEdit()">Cancel</button>
+              <button mat-button color="primary" *ngIf="isAdmin && !editingFaq" [disabled]="editingFaq" (click)="editFaq(faq)">Edit</button>
+              <button mat-icon-button color="warn" *ngIf="isAdmin && faq.faqId !== null" (click)="confirmDelete(faq.faqId!)">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</app-dashbord-admin>

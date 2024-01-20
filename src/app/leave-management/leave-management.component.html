@@ -1,0 +1,86 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+
+<br>
+<br>
+
+<div class="body">
+    <div class="container ">
+    
+<div class="table-responsive">
+    <div class="table-wrapper">
+        <div class="table-title">
+            <div class="row">
+                <div class="col-sm-5">
+                    <h2>Pending <b>Leave Request</b></h2>
+                </div>
+                
+                <div class="col-sm-7">
+                    
+                   	
+                    					
+                </div>
+                
+            </div>
+        </div>
+        <div class="input-group search b">
+          
+            <input [(ngModel)]="searchVal" type="search"  class="form-control rounded" placeholder="Search By firstname" aria-label="Search" aria-describedby="search-addon" />
+            <button (click)="search()" type="button" class="btn" >search</button>
+          
+          </div>
+        <table class="table table-striped table-hover">
+            <thead>
+                
+                <tr>
+                    <th>image</th>
+                    <th>firstname</th>
+                    <th>lastName</th>						
+                    <th>email </th>
+                    <th>start day</th>
+                    <th>end day</th>
+                    <th>created</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let leaveRequest of filteredLeaveRequests">
+                    <td><a href="#"><img [src]="leaveRequest.employee.imageData" class="avatar" alt="Avatar" width="50 px " height="50 px"/> </a></td>
+                    <td>{{leaveRequest.employee.firstname}} </td>
+            
+                    <td>{{leaveRequest.employee.lastName}}</td>                        
+                    <td>{{leaveRequest.employee.email}}</td>
+                    <td>{{leaveRequest.debutDate}}</td>
+                    <td>{{leaveRequest.finDate}}</td>
+                    <td>{{leaveRequest.created}}</td>
+                    
+                    <td>
+                        <a (click)="accept(leaveRequest.id)" class="settings " title="Accept" data-toggle="tooltip">
+                            <span class="material-icons">check</span>
+                          </a>
+                          
+                        <a (click)="reject(leaveRequest.id)"  class="delete " title="Cancel" data-toggle="tooltip"><span class="material-icons">&#xE5C9;</span></a>
+                    </td>
+                </tr>
+               
+            </tbody>
+        </table>
+        <ng-container *ngIf="filteredLeaveRequests.length==0"><h3>no leave request pending</h3></ng-container>
+
+       
+    </div>
+</div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<br>
+</div>
+
+<br>

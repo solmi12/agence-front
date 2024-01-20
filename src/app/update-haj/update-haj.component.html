@@ -1,0 +1,229 @@
+<app-dashbord-admin>
+    <div class="haj-form-container">
+      <form #myForm="ngForm" (ngSubmit)="onSubmit()" class="haj-form">
+        <h2>Edit Haj</h2>
+  
+        <!-- Haj Name -->
+        <div class="form-group">
+          <label for="hajName">Haj Name:</label>
+          <input type="text" id="hajName" name="hajName" [(ngModel)]="hajDto.hajName" required>
+        </div>
+  
+        <!-- Haj Description -->
+        <div class="form-group">
+          <label for="hajDescription">Haj Description :</label>
+          <textarea id="hajDescription" name="hajDescription" [(ngModel)]="hajDto.hajDescription"></textarea>
+        </div>
+  
+        <!-- Departure Airport -->
+        <div class="form-group">
+          <label for="departureAirport">Departure Airport:</label>
+          <input type="text" id="departureAirport" name="departureAirport" [(ngModel)]="hajDto.departureAirport" required>
+        </div>
+  
+        <!-- Return Airport -->
+        <div class="form-group">
+          <label for="returnAirport">Return Airport:</label>
+          <input type="text" id="returnAirport" name="returnAirport" [(ngModel)]="hajDto.retrnAirport" required>
+        </div>
+  
+        <!-- Going Date -->
+        <div class="form-group">
+          <label for="going">Going:</label>
+          <input type="text" id="going" name="going" [(ngModel)]="hajDto.going" required>
+        </div>
+  
+        <!-- Reservation Number -->
+        <div class="form-group">
+          <label for="reservationNumber">Reservation Number:</label>
+          <input type="number" id="reservationNumber" name="reservationNumber" [(ngModel)]="hajDto.reservationNumber" required>
+        </div>
+  
+        <!-- Coming Date -->
+        <div class="form-group">
+          <label for="coming">Coming:</label>
+          <input type="text" id="coming" name="coming" [(ngModel)]="hajDto.coming" required>
+        </div>
+  
+        <!-- Airline -->
+        <div class="form-group">
+          <label for="airline">Airline:</label>
+          <input type="text" id="airline" name="airline" [(ngModel)]="hajDto.airline" required>
+        </div>
+  
+        <!-- Distance Madina -->
+        <div class="form-group">
+          <label for="distanceMadina">Distance Madina:</label>
+          <input type="text" id="distanceMadina" name="distanceMadina" [(ngModel)]="hajDto.distanceMadina">
+        </div>
+  
+        <!-- Distance Makka -->
+        <div class="form-group">
+          <label for="distanceMakka">Distance Makka:</label>
+          <input type="text" id="distanceMakka" name="distanceMakka" [(ngModel)]="hajDto.distanceMakka">
+        </div>
+  
+        <!-- Price -->
+        <div class="form-group">
+          <label for="price">Price:</label>
+          <input type="text" id="price" name="price" [(ngModel)]="hajDto.price">
+        </div>
+  
+        <!-- Type Room -->
+        <div class="form-group">
+          <label for="typeRoom">Type Room:</label>
+          <input type="text" id="typeRoom" name="typeRoom" [(ngModel)]="hajDto.typeRoom">
+        </div>
+  
+        <!-- Price Vente -->
+        <div class="form-group">
+          <label for="priceVen">Price Vente:</label>
+          <input type="number" id="priceVen" name="priceVen" [(ngModel)]="hajDto.priceVen" required>
+        </div>
+  
+        <!-- Price Ad -->
+        <div class="form-group">
+          <label for="priceAd">Price Ad:</label>
+          <input type="number" id="priceAd" name="priceAd" [(ngModel)]="hajDto.priceAd" required>
+        </div>
+  
+        <!-- Number of Days -->
+        <div class="form-group">
+          <label for="nbrDays">Number of Days:</label>
+          <input type="text" id="nbrDays" name="nbrDays" [(ngModel)]="hajDto.nbrDays">
+        </div>
+  
+        <!-- Offers 1-10 -->
+        <div class="form-group">
+          <label for="offre1">Offer 1:</label>
+          <input type="text" id="offre1" name="offre1" [(ngModel)]="hajDto.offre1">
+        </div>
+        <div class="form-group">
+            <label for="offre2">Offer 2:</label>
+            <input type="text" id="offre2" name="offre2" [(ngModel)]="hajDto.offre2">
+          </div>
+
+          <div class="form-group">
+            <label for="offre3">Offer 3:</label>
+            <input type="text" id="offre3" name="offre3" [(ngModel)]="hajDto.offre3">
+          </div>
+          <div class="form-group">
+            <label for="offre4">Offer 4:</label>
+            <input type="text" id="offre4" name="offre4" [(ngModel)]="hajDto.offre4">
+          </div>
+          <div class="form-group">
+            <label for="offre5">Offer 5:</label>
+            <input type="text" id="offre5" name="offre5" [(ngModel)]="hajDto.offre5">
+          </div>
+          <div class="form-group">
+            <label for="offre6">Offer 6:</label>
+            <input type="text" id="offre6" name="offre6" [(ngModel)]="hajDto.offre6">
+          </div>
+          <div class="form-group">
+            <label for="offre7">Offer 7:</label>
+            <input type="text" id="offre7" name="offre7" [(ngModel)]="hajDto.offre7">
+          </div>
+          <div class="form-group">
+            <label for="offre8">Offer 8:</label>
+            <input type="text" id="offre8" name="offre8" [(ngModel)]="hajDto.offre8">
+          </div>
+  
+          <div class="form-group">
+            <label for="offre9">Offer 9:</label>
+            <input type="text" id="offre9" name="offre9" [(ngModel)]="hajDto.offre9">
+          </div>
+          <div class="form-group">
+            <label for="offre10">Offer 10:</label>
+            <input type="text" id="offre10" name="offre10" [(ngModel)]="hajDto.offre10">
+          </div>
+        <!-- Airfare Checkbox -->
+        <div class="form-group">
+          <label for="airfare">Airfare:</label>
+          <input type="checkbox" id="airfare" name="airfare" [(ngModel)]="hajDto.airfare">
+        </div>
+  
+        <!-- Local Transportation Checkbox -->
+        <div class="form-group">
+          <label for="localTransportation">Local Transportation:</label>
+          <input type="checkbox" id="localTransportation" name="localTransportation" [(ngModel)]="hajDto.localTransportation">
+        </div>
+  
+        <!-- Tour Guide Checkbox -->
+        <div class="form-group">
+          <label for="tourGuide">Tour Guide:</label>
+          <input type="checkbox" id="tourGuide" name="tourGuide" [(ngModel)]="hajDto.tourGuide">
+        </div>
+  
+        <!-- Accommodation Checkbox -->
+        <div class="form-group">
+          <label for="accommodation">Accommodation:</label>
+          <input type="checkbox" id="accommodation" name="accommodation" [(ngModel)]="hajDto.accommodation">
+        </div>
+  
+        <!-- Entrance Fees Checkbox -->
+        <div class="form-group">
+          <label for="entranceFees">Entrance Fees:</label>
+          <input type="checkbox" id="entranceFees" name="entranceFees" [(ngModel)]="hajDto.entranceFees">
+        </div>
+  
+        <!-- Lunch Checkbox -->
+        <div class="form-group">
+          <label for="lunch">Lunch:</label>
+          <input type="checkbox" id="lunch" name="lunch" [(ngModel)]="hajDto.lunch">
+        </div>
+  
+        <!-- Dinner Checkbox -->
+        <div class="form-group">
+          <label for="dinner">Dinner:</label>
+          <input type="checkbox" id="dinner" name="dinner" [(ngModel)]="hajDto.dinner">
+        </div>
+  
+        <!-- Guide Gratuity Checkbox -->
+        <div class="form-group">
+          <label for="guideGratuity">Guide Gratuity:</label>
+          <input type="checkbox" id="guideGratuity" name="guideGratuity" [(ngModel)]="hajDto.guideGratuity">
+        </div>
+  
+        <div class="form-group">
+          <label for="showNow">Show Now:</label>
+          <input type="checkbox" id="showNow" name="showNow" [(ngModel)]="hajDto.showNow">
+        </div>
+  
+        <div class="form-group">
+          <label for="numb">Show Number:</label>
+          <input type="number" id="numb" name="numb" [(ngModel)]="hajDto.numb" required>
+        </div>
+  
+        <!-- Haj Description 2 -->
+        <div class="form-group">
+          <label for="hajDescription2">Haj Description 2:</label>
+          <textarea id="hajDescription2" name="hajDescription2" [(ngModel)]="hajDto.hajDescription2"></textarea>
+        </div>
+  
+        <!-- Haj Category Radio Buttons -->
+        <div class="form-group">
+          <label>Haj Category:</label>
+          <div class="radio-group">
+            <input type="radio" id="UMRA" name="hajCategory" value="UMRA" [(ngModel)]="hajDto.hajCategorie">
+            <label for="UMRA">Umra</label>
+          </div>
+          <div class="radio-group">
+            <input type="radio" id="HAJJ" name="hajCategory" value="HAJJ" [(ngModel)]="hajDto.hajCategorie">
+            <label for="HAJJ">Hajj</label>
+          </div>
+          <div class="radio-group">
+            <input type="radio" id="OTHER" name="hajCategory" value="OTHER" [(ngModel)]="hajDto.hajCategorie">
+            <label for="OTHER">Other</label>
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <label for="imageUpload">Upload Image:</label>
+          <input type="file" id="imageUpload" (change)="onImageSelected($event)" accept="image/*">
+        </div>
+  
+        <button type="submit" class="btn btn-primary">Update</button>
+      </form>
+    </div>
+  </app-dashbord-admin>
+  

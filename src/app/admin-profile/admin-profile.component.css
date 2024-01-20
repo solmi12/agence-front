@@ -1,0 +1,109 @@
+.body{
+    margin-top:50px;
+    background: #eee;
+}
+/* My Account */
+.payments-item img.mr-3 {
+    width: 47px;
+}
+.order-list .btn {
+    border-radius: 2px;
+    min-width: 121px;
+    font-size: 13px;
+    padding: 7px 0 7px 0;
+}
+.osahan-account-page-left .nav-link {
+    padding: 18px 20px;
+    border: none;
+    font-weight: 600;
+    color: #535665;
+}
+.osahan-account-page-left .nav-link i {
+    width: 28px;
+    height: 28px;
+    background: #535665;
+    display: inline-block;
+    text-align: center;
+    line-height: 29px;
+    font-size: 15px;
+    border-radius: 50px;
+    margin: 0 7px 0 0px;
+    color: #fff;
+}
+ul.center-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* This will center items horizontally */
+    justify-content: center; /* This will center items vertically */
+    /* You can also set a fixed height if needed */
+    /* height: 200px; */
+  }
+  .card-body {
+    display: flex;
+    justify-content: space-between; /* This will push the elements to the left and right edges */
+    align-items: center; /* Align the items vertically in the center */
+  }
+  .left-content {
+    order: 1; /* Set the order to 1 to move it to the end */
+  }
+  .round-image {
+    /* This will make the image circular */
+    width: 70px;
+    height: 30%;
+  }
+  .card:hover {
+    background-color: #f9f9f9; 
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3); 
+    transform: translateY(-5px); 
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.4), transparent);
+  }
+
+  
+  
+  .a{
+    display: block;
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
+    font-family: sans-serif;
+    text-decoration: none;
+    color: #333;
+    border: 2px solid #333;
+    letter-spacing: 2px;
+    text-align: center;
+    position: relative;
+    transition: all .35s;
+  }
+  
+  .a span{
+    position: relative;
+    z-index: 2;
+  }
+  
+  .a:after{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #16222A;
+  background: -webkit-linear-gradient(59deg, #3A6073, #16222A);
+  background: linear-gradient(59deg, #3A6073, #16222A);
+  color: white;
+    transition: all .35s;
+  }
+  
+  .a:hover{
+    color: #fff;
+  }
+  
+  .a:hover:after{
+    width: 100%;
+  }
+  .button-container {
+    margin-bottom: 20px; /* Add margin between buttons */
+  }
+
+  

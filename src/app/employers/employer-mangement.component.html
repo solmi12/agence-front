@@ -1,0 +1,90 @@
+
+<app-dashbord-admin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+
+<br>
+<br>
+<div class="container ">
+<div class="body">
+    
+    
+<div class="table-responsive">
+    <div class="table-wrapper">
+        <div class="table-title">
+            <div class="row">
+                <div class="col-sm-5">
+                    <h2>Employees <b>Management</b></h2>
+                </div>
+                
+                <div class="col-sm-7">
+                    
+                    <a routerLink="/registerEmployee" class="btn btn-secondary"><i class="material-icons">&#xE147;</i> <span>Add New Employee</span></a>
+                   	
+                    					
+                </div>
+                
+            </div>
+        </div>
+        <div class="input-group search b">
+          
+            <input [(ngModel)]="searchVal" type="search"  class="form-control rounded" placeholder="Search By firstname" aria-label="Search" aria-describedby="search-addon" />
+            <button (click)="search()" type="button" class="btn" >search</button>
+          
+          </div>
+        <table class="table table-striped table-hover">
+            <thead>
+                
+                <tr>
+                    <th>image</th>
+                    <th>firstname</th>
+                    <th>lastName</th>						
+                    <th>email </th>
+                    <th>birthDay</th>
+                    <th>project</th>
+                    <th>department</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let employee of filteredEmployees">
+                    <td><a href="#"><img [src]="employee.imageUrl" class="avatar" alt="Avatar" width="50 px " height="50 px"/> </a></td>
+                    <td>{{employee.firstname}} </td>
+            
+                    <td>{{employee.lastName}}</td>                        
+                    <td>{{employee.email}}</td>
+                    <td>{{employee.birthDay}}</td>
+
+
+                    <td>
+                        <a (click)="updateEmployee(employee)" class="settings" title="Settings" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a>
+                        <a (click)="deleteEmpl(employee.userId)"  class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE5C9;</i></a>
+                    </td>
+                </tr>
+               
+            </tbody>
+        </table>
+        <ng-container *ngIf="filteredEmployees?.length==0"><h3>no emplyees</h3></ng-container>
+
+       
+    </div>
+</div>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+</div>
+</app-dashbord-admin>

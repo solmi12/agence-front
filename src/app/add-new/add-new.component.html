@@ -1,0 +1,21 @@
+<app-dashbord-admin>
+  <div class="container">
+    <h2>Add New Item</h2>
+
+    <form>
+      <div class="form-group">
+        <label for="newName">Name:</label>
+        <input type="text" class="form-control" id="newName" [(ngModel)]="new.newName" name="newName" />
+      </div>
+      <div class="form-group">
+        <label for="newDescription">Description:</label>
+        <textarea class="form-control" id="newDescription" [(ngModel)]="new.newDescription" name="newDescription"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="imageUpload">Upload Image:</label>
+        <input type="file" id="imageUpload" (change)="onImageSelected($event)" accept="image/*" name="imageUpload">
+      </div>
+      <button type="button" class="btn btn-primary" (click)="addNew()">Add New</button>
+    </form>
+  </div>
+</app-dashbord-admin>
